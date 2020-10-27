@@ -2,11 +2,16 @@
 # docs at https://www.ssh.com/ssh/config
 #
 
-# should have the ssh-agent running and setup, i.e. eval $(ssh-agent)
-AddKeysToAgent yes
-
 # use per-host config
 Host example.com
   User username
+  PubkeyAuthentication yes
   IdentityFile ~/.ssh/key
-  IdentitiesOnly=yes
+
+# global defaults
+Host *
+  # should have the ssh-agent running and setup, i.e. eval $(ssh-agent)
+  AddKeysToAgent yes 
+  IdentitiesOnly yes
+  # disable by default, enable for each host (see https://github.com/FiloSottile/whoami.filippo.io)
+  PubkeyAuthentication no
