@@ -8,6 +8,10 @@
 
 ZSH_THEME="robbyrussell"
 
+# set GPG_TTY to an actual tty device, see https://www.gnupg.org/documentation/manuals/gnupg/Common-Problems.html
+export GPG_TTY=$(tty)
+
+
 ###############
 ### ALIASES ###
 ###############
