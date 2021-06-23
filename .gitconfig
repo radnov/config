@@ -3,4 +3,4 @@
 [commit]
     gpgsign = true
 [push]
-	default = nothing
+    default = nothing
